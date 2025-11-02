@@ -41,7 +41,7 @@
     function inventorFilter(inventors) {
       return inventors
         .filter(
-          person => 1500 <= person.year <= 1599
+          person => person.year >= 1500 && person.year < 1600
         )
     };
 
