@@ -73,12 +73,11 @@
     console.log(combinedYearsLiving);
 
     // 5. Sort the inventors by years lived
-    let inventorsLifeLengthSorted = inventors.map(
-      inventor => ({inventor, lifetime: inventor.passed - inventor.year})
-    )
-    .sort(
-      (a, b) => b.lifetime - a.lifetime
-    );
+    let inventorsLifeLengthSorted = inventors.sort(function(a, b) {
+      const aLifetime = a.passed - a.year;
+      const bLifetime = b.passed - b.year;
+      return bLifetime - aLifetime
+    });
 
     console.table(inventorsLifeLengthSorted);
 
