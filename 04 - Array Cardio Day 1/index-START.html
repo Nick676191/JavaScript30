@@ -83,21 +83,35 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-    let categories = document.querySelector('mw-category');
-    let streetLinks = Array.from(categories.querySelectorAll('a'));
+    // // would do the following code in the console to achieve the desired effect for this part
+    // let categories = document.querySelector('mw-category');
+    // let streetLinks = Array.from(categories.querySelectorAll('a'));
 
-    let de = streetLinks
-                        .map(link => link.textContent)
-                        .filter(streetName => streetName.includes('de'));
+    // let de = streetLinks
+    //                     .map(link => link.textContent)
+    //                     .filter(streetName => streetName.includes('de'));
     
-    console.table(de);
+    // console.table(de);
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    let peopleSorted = people.sort();
+    console.log(peopleSorted);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    // creates an object (obj) that increments each values number everytime it is seen within the original data array
+    let trans = data.reduce(function(obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+
+    console.log(data);
+    console.log(trans);
 
   </script>
 </body>
